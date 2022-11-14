@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Indoor Sports
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let sukan of sukans">
+      <ion-icon name="md-arrow-dropright"></ion-icon>
+      <ion-button color="primary" (click)="goToSportCenterPage(sukan.sportID, sukan.sportName)"> {{sukan.sportName}} </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

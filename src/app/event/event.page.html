@@ -1,0 +1,29 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Event Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list *ngFor="let event of events">
+    <ion-card>
+      <img [src]="event.eventImg" />
+      <ion-card-title>
+        {{event.eventName}}
+      </ion-card-title>
+      
+      <ion-card-content>
+        <p>{{event.eventDetails}}</p>
+        <p>Date : {{event.eventDate}}</p>
+        <p>Time : {{event.eventTime}}</p>
+        <p>Contact Number : <a href="tel:{{event.phoneNumber}}" class="button button-positive">{{event.phoneNumber}}</a></p>
+        <a href="{{event.eventLink}}">Click here for more info</a>
+      </ion-card-content>
+    </ion-card> 
+  </ion-list>
+</ion-content>

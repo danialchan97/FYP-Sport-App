@@ -1,0 +1,31 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Competition Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <ion-list *ngFor="let comp of comps">
+      <ion-card>
+        <img [src]="comp.compImg" />
+        <ion-card-title>
+          {{comp.compName}}
+        </ion-card-title>
+        
+        <ion-card-content>
+          <p>{{comp.compDetails}}</p>
+          <p>Date: {{comp.compDate}}</p>
+          <p>Time: {{comp.compTime}}</p>
+          <p>Venue: {{comp.compVenue}}</p>
+          <p>PIC: {{comp.compStaff}}</p>
+          <p>Contact Number : <a href="tel:{{comp.phoneNumber}}" class="button button-positive">{{comp.phoneNumber}}</a></p>
+          
+        </ion-card-content>
+      </ion-card> 
+    </ion-list>
+  </ion-content>

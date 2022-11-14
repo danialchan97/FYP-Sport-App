@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{sportName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let sc of sCenter">
+    <ion-card>
+      <img [src]="sc.img"/>
+      <ion-card-title>
+        {{sc.name}}
+      </ion-card-title>
+
+      <ion-card-content>
+        <p>{{sc.location}}</p>
+        <p>Contact Number : <a href="tel:{{sc.number}}" class="button button-positive">{{sc.number}}</a>
+        </p>
+        <a href="{{sc.link}}">Click here for more info</a><br>
+        <ion-button (click)="navme(sc.location)">Navigate</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
